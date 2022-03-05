@@ -14,6 +14,7 @@ namespace TimeComplexityDemos
             TestLinear();
             TestConstant();
             LogarithmicTest();
+            ExponentialTest();
 
             Console.ReadLine();
         }
@@ -63,6 +64,38 @@ namespace TimeComplexityDemos
             LogarithmicExecution(array5,8);
         }
 
+        private static void ExponentialTest()
+        {
+            Console.WriteLine("\r\n *** Exponential ***");
+            var array1 = populateArray(500);
+            var array2 = populateArray(1000);
+            var array3 = populateArray(1500);
+            var array4 = populateArray(2000);
+            var array5 = populateArray(2500);
+            var array6 = populateArray(3000);
+            var array7 = populateArray(3500);
+            var array8 = populateArray(4000);
+            var array9 = populateArray(4500);
+            var array10 = populateArray(5000);
+            var array11 = populateArray(5500);
+            var array12 = populateArray(6000);
+            var array13 = populateArray(6500);
+
+            ExponentialExecution(array1);
+            ExponentialExecution(array2);
+            ExponentialExecution(array3);
+            ExponentialExecution(array4);
+            ExponentialExecution(array5);
+            ExponentialExecution(array6);
+            ExponentialExecution(array7);
+            ExponentialExecution(array8);
+            ExponentialExecution(array9);
+            ExponentialExecution(array10);
+            ExponentialExecution(array11);
+            ExponentialExecution(array12);
+            ExponentialExecution(array13);
+        }
+
         /********************************* EXECUTIONS *********************************/
         private static void ConstantExecution(int length)
         {
@@ -97,6 +130,22 @@ namespace TimeComplexityDemos
 
             var contador = 0;
             for (int i = 1; i <= array.Length; i *= step)
+            {
+                contador++;
+            }
+
+            TimeSpan elapsedTime = DateTime.Now - start;
+            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds}\t -> {array.Length} elements.");
+
+            return contador;
+        }
+
+        private static int ExponentialExecution(int[] array)
+        {
+            DateTime start = DateTime.Now;
+
+            var contador = 0;
+            for (int i = 1; i <= array.Length * array.Length; i++)
             {
                 contador++;
             }
