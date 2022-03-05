@@ -51,19 +51,19 @@ namespace TimeComplexityDemos
         private static void LogarithmicTest()
         {
             Console.WriteLine("\r\n *** Logarithmic ***");
-            var array1 = populateArray(10000);
-            var array2 = populateArray(100000);
-            var array3 = populateArray(1000000);
-            var array4 = populateArray(10000000);
-            var array5 = populateArray(100000000);
-            var array6 = populateArray(1000000000);
+            var array1 = populateArray(200000);
+            var array2 = populateArray(300000);
+            var array3 = populateArray(400000);
+            var array4 = populateArray(500000);
+            var array5 = populateArray(600000);
+            var array6 = populateArray(700000);
 
-            LogarithmicExecution(array1,5);
-            LogarithmicExecution(array2,5);
-            LogarithmicExecution(array3,5);
+            LogarithmicExecution(array1,2);
+            LogarithmicExecution(array2,3);
+            LogarithmicExecution(array3,4);
             LogarithmicExecution(array4,5);
-            LogarithmicExecution(array5,5);
-            LogarithmicExecution(array6,5);
+            LogarithmicExecution(array5,6);
+            LogarithmicExecution(array6,7);
         }
 
         private static void ExponentialTest()
@@ -107,7 +107,7 @@ namespace TimeComplexityDemos
             var first = array[0]; //only 1 operation
 
             TimeSpan elapsedTime = DateTime.Now - start;
-            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds}\t -> {length} elements / 1 operation");
+            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds} ms. \t-> {length} elements / 1 operation");
         }
 
         private static int LinealExecution(int[] arreglo)
@@ -121,7 +121,7 @@ namespace TimeComplexityDemos
             }
 
             TimeSpan elapsedTime = DateTime.Now - start;
-            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds}\t -> {arreglo.Length} elements / {contador} operations.");
+            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds} ms. \t-> {arreglo.Length} elements / {contador} operations.");
 
             return contador;
         }
@@ -137,7 +137,7 @@ namespace TimeComplexityDemos
             }
 
             TimeSpan elapsedTime = DateTime.Now - start;
-            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds}\t -> {array.Length} elements / {contador} operations.");
+            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds} ms. \t-> {array.Length} elements / {contador} operations.");
 
             return contador;
         }
@@ -153,7 +153,7 @@ namespace TimeComplexityDemos
             }
 
             TimeSpan elapsedTime = DateTime.Now - start;
-            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds}\t -> {array.Length} elements / {contador} operations.");
+            Console.WriteLine($"Elapsed time: {elapsedTime.TotalMilliseconds} ms. \t-> {array.Length} elements / {contador} operations.");
 
             return contador;
         }
